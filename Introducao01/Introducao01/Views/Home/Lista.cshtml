@@ -1,0 +1,35 @@
+﻿@model Introducao01.Models.Pessoa 
+<!--Referencia para a classe pessoa. Para trabalhar e reutilizar essa classe aqui dentro-->
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+<div>
+    <b>@Html.LabelFor(x=>x.PessoaId) </b> <!--Pegando o nome do campo, vai dentro da classe pessoa e tras
+                                              o nome daquele campo-->
+</div>
+
+<div>
+    @Model.PessoaId
+</div>
+
+<div>
+    <b>@Html.LabelFor(x => x.Nome) </b>
+</div>
+
+<div>
+    @Model.Nome
+</div>
+
+<div>
+    <b>@Html.LabelFor(x=>x.Tipo)</b>
+</div>
+
+<div>
+    @Model.Tipo
+</div>
+
+@Html.ActionLink("Voltar", "Index", "Home");

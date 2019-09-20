@@ -1,0 +1,52 @@
+﻿<!--Referencia a um modelo
+    Nome do Projeto.Nome da pasta onde estão os modelos.Nome da classe
+model        Introducao01.          Models.                    Pessoa
+    -->
+
+@model Introducao01.Models.Pessoa
+
+    @{
+        //TITULO DA PAGINA APARECE NA BARRA DE NAVGAÇÃO
+        ViewBag.Title = "Index";
+    }
+
+    <h2>Curso de ASP MVC</h2>
+    <p>Curso com Victor Dionizio</p>
+    
+
+    <br />
+    <br />
+
+    <p>Viwe Tipada</p>
+    
+    @using (Html.BeginForm("Lista", "Home", FormMethod.Post))
+    { <fieldset>
+            <legend>Informações de Pessoas</legend>
+
+            <div>
+                <b>@Html.LabelFor(x => x.PessoaId)</b>
+            </div>
+            <div>
+                @Html.EditorFor(x => x.PessoaId)
+            </div>
+
+            <div>
+                <b>@Html.LabelFor(x => x.Nome)</b>
+            </div>
+            <div>
+                @Html.EditorFor(x => x.Nome)
+            </div>
+
+            <div>
+                <b>@Html.LabelFor(x => x.Tipo)</b>
+            </div>
+
+            <div>
+                @Html.EditorFor(x => x.Tipo)
+            </div>
+
+            <br />
+
+            <p><input type ="submit" value="Enviar" /></p>
+        </fieldset>
+    }
